@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odin Library</title>
+    <!-- nuebe -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+    <!-- Roboto -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+      <div class="header">
+        <h2 class="logo"> My Library</h2>
+      </div>
+      <div class="main">
+    
+      <div class="footer">
+        @Snaarze copyright 2024 Odin Project    
+      </div>
+    </div>
+
+    <dialog id="booksInformation" class="bookForm">
+        <form class="form" action="" method="dialog">
+            <div class="information">
+                <label for="authorName"> Author</label>
+                <input class="authorBook" type="text" id="authorName" name="authorName" placeholder="Author" >
+            </div>
+            <div class="information">
+                <label for="bookTitle"> Title</label>
+                <input  class="titleBook" type="text" id="bookTitle" name="bookTitle" placeholder="Title" >
+            </div>
+            <div class="information">
+                <label class="pageBook" for="pageCount"> Page</label>
+                <input class="pageCount" type="number" id="pageCount" name="pageCount" placeholder="0" >
+            </div>
+            <div class="buttons">
+                <button type="submit" value="default" onclick="addBookToLibrary();">Submit</button>
+            </div>
+
+        </form>
+    </dialog>
+    <div >
+        <button id="addBooks">+</button>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>

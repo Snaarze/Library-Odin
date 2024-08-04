@@ -1,0 +1,274 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+
+body{
+    width: 100vw;
+    height: 100vh;
+    background-color: #e2e8f0;
+}
+
+.bookForm{
+    position: fixed;
+    width: 300px;
+    height: 300px;
+    margin: auto;
+    border: none;
+    border-radius: 25px;
+}
+
+.form {
+    height: 100%;
+    display: grid;
+    grid-template-rows: repeat(3, 1fr) 2fr;
+}
+
+.information{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    text-align: center;
+    grid-template-areas: ". label ."
+                         ". input .";
+}
+
+.information >  label { 
+    text-align: start;
+    margin-bottom: -20px;
+    margin-left: 5px;
+    font-size: 12px;
+    font-weight: 400;
+    grid-area: label;
+    font-family: "Bebas Neue", sans-serif;
+}
+
+.information > input {
+    font-size: 12px;
+    height: 25px;
+    max-width:25ch ;
+    border: none;
+    background-color: #cbd5e1;
+    border-radius: 10px;
+    color: rgba(0, 0, 0, 0.4);
+    padding: 0 10px;
+    grid-area: input;
+}
+
+.information > input:focus{
+    outline: none;
+    border-color: lightblue;
+}
+
+.buttons {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.buttons > button {
+    width: 150px;
+    height: 50px;
+    font-size: 20px;
+    font-weight: 800;
+    color: white;
+    background-color: #67e8f9;
+    border: none;
+    border-radius: 10px;
+    font-family: "Bebas Neue", sans-serif;
+    letter-spacing: 5px;
+}
+
+.container {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-rows: 1fr 8fr 1fr;
+    grid-template-areas: "Header"
+                         "Main"
+                         "Footer";
+}
+
+.header{
+    grid-area: Header;
+    border-bottom: 0.5px dashed black;
+    background-color: white;
+}
+
+.logo {
+    font-family: "Bebas Neue", sans-serif;;
+    font-size: 50px;
+    font-weight: 800;
+    text-align: center;
+    margin-top: 10px    ;
+}
+
+.main {
+    grid-area: Main;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 300px));
+    grid-template-rows: repeat(2,minmax(200px, 350px));
+    column-gap: 75px;
+    row-gap: 50px;
+    margin: 50px;
+}
+
+.card{
+    display: grid;
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: 1fr 3fr 1fr;
+    background-color: white;
+    border: 0.5px dashed black;
+    justify-content: center;
+    align-items: center;
+    grid-template-areas:  ". . Close"
+                          ". author  . "
+                          ". Title  . "
+                          ". Page ."
+                          ". Read Read";
+    
+}
+
+.authorCard{
+    grid-area: author;
+}
+
+.titleCard {
+    grid-area: Title;
+}
+
+.pageCard {
+    grid-area: Page;
+}
+
+.read-status {
+    grid-area: Read;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    text-align: center;
+}
+
+.readCard {
+    margin: auto;
+}
+.button-container {
+    grid-area: Close;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+}
+
+.closeBtn {
+    background-color: #cbd5e1;
+    border: none;
+    border-radius: 25px;
+    color: white;
+    height: 30px;
+    width: 30px;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    
+}
+
+
+/* .read > label {
+    position: absolute;
+    bottom: 5%;
+    right: 10%;
+} */
+
+.footer {
+    grid-area: Footer;
+    background-color: white;
+    border : 0.5px dashed black;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    font-family:"Bebas Neue", sans-serif;
+    font-size: 24px;
+    font-weight: 800;
+}
+
+
+
+
+
+#addBooks {
+    width: 100px;
+    height: 100px;
+    font-size: 50px;
+    border: none;
+    border-radius: 50%;
+    background-color: #67e8f9;
+    color: white;
+    position: fixed;
+    bottom: 120px;
+    right: 50px;
+    z-index: 1;
+}
+#addBooks:active {
+    background-color: #1e3a8a;
+    color: #cbd5e1;
+    border: none;
+}
+
+/* slider */
+/* The switch - the box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #2196F3;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }

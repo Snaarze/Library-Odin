@@ -34,7 +34,7 @@ function Book(id ,Author, Title, Page, isRead){
 // create new books and append books on the array
 function createNewbook(){
     
-    const newBook  = new Book (id , authorInput.value, titleInput.value, PageInput.value, true)
+    const newBook  = new Book (id , authorInput.value, titleInput.value, PageInput.value, false)
     
     myLibrary.push(newBook);
     createNewCard();
@@ -59,7 +59,7 @@ function displayBooks() {
         author.textContent = "Author : " + myLibrary[index].Author;
         title.textContent = "Title :" + myLibrary[index].Title;
         page.textContent = "Page : " + myLibrary[index].Page;
-        read.textContent = "not yet read";
+        read.textContent = (myLibrary[index].isRead) ? "read" : "not yet read";
     })  
     
 }
@@ -159,18 +159,19 @@ function changeStatus() {
         // to avoid assigning multiple event listener
         if (!checkbox.hasEventListener) {
             checkbox.addEventListener("change", (event) => {
-                if (event.target.classList.contains('checkInput')) {
-                    const card = checkbox.parentNode.parentNode.parentNode;
-                    const status = checkbox.parentNode.parentNode.children[1];
-                    const index = Number(card.getAttribute("data-index"));
-                    let indexs = findIndexById(myLibrary, index);
-                    console.log(index);
-                    console.log(event.target)
-                    if (indexs !== -1 && myLibrary[indexs]) {
-                        myLibrary[indexs].isRead = !myLibrary[indexs].isRead;
-                        status.textContent = !myLibrary[indexs].isRead ? "Read" : "not yet read";
-                    }
-                }
+
+                const card = checkbox.parentNode.parentNode.parentNode;
+                const status = checkbox.parentNode.parentNode.children[1];
+                const index = Number(card.getAttribute("data-index"));
+                let indexs = findIndexById(myLibrary, index);
+                console.log(index);
+                console.log(event.target)
+                if (indexs !== -1 && myLibrary[indexs]) {
+                    myLibrary[indexs].isRead = !myLibrary[indexs].isRead;
+                    status.textContent = !myLibrary[indexs].isRead ? "not yet read" : "read";
+                }    
+                    
+               
             });
             checkbox.hasEventListener = true; // Set a custom property to indicate the listener is attached
         }

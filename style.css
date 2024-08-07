@@ -127,9 +127,9 @@ body{
     justify-content: center;
     align-items: center;
     grid-template-areas:  ". . Close"
-                          ". author  . "
-                          ". Title  . "
-                          ". Page ."
+                          ". author  author"
+                          ". Title  Title "
+                          ". Page Page"
                           ". Read Read";
     
 }

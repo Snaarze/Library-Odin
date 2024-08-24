@@ -22,14 +22,15 @@ const myLibrary = [
 let id =  (myLibrary.length === 0) ? 0 : myLibrary[myLibrary.length - 1].id + 1;
 
 
-function Book(id ,Author, Title, Page, isRead){
-    this.id = id
-    this.Author = Author;
-    this.Title = Title;
-    this.Page = Page;
-    this.isRead = isRead;
+class Book{
+    constructor(id ,Author, Title, Page, isRead){
+        this.id = id
+        this.Author = Author;
+        this.Title = Title;
+        this.Page = Page;
+        this.isRead = isRead;
+    }
 }
-
 
 // create new books and append books on the array
 function createNewbook(){
